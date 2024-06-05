@@ -1,0 +1,63 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, jpeg, ExtCtrls;
+
+type
+  TForm2 = class(TForm)
+    edt1: TEdit;
+    btn1: TButton;
+    Label1: TLabel;
+    lbl1: TLabel;
+    edt2: TEdit;
+    btn2: TButton;
+    img1: TImage;
+    procedure btn1Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+uses PROJECT_PENJUALAN;
+
+{$R *.dfm}
+
+procedure TForm2.btn1Click(Sender: TObject);
+begin
+if edt1.Text = 'admin' then
+begin
+form1.mm1.Items[1].Visible:=True;
+form1.mm1.Items[2].Visible:=False;
+form1.mm1.Items[3].Visible:=False;
+end else if edt1.Text = 'kasir' then
+begin
+form1.mm1.Items[1].Visible:=false;
+form1.mm1.Items[2].Visible:=True;
+form1.mm1.Items[3].Visible:=False;
+end else if edt1.Text = 'pemilik' then
+begin
+form1.mm1.Items[1].Visible:=false;
+form1.mm1.Items[2].Visible:=false;
+form1.mm1.Items[3].Visible:=True;
+end else
+begin
+end;
+Form2.Close;
+end;
+
+procedure TForm2.btn2Click(Sender: TObject);
+begin
+Form2.Close;
+end;
+
+end.
